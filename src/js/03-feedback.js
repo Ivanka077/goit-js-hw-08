@@ -17,9 +17,11 @@ function chaseFormInput(evt) {
 
 function cleanInputAndLocalStorage(evt) {
     evt.preventDefault();
+    console.log(formValue);
     localStorage.removeItem(FEEDBACKFORM_KEY);
     evt.currentTarget.reset()
     formValue = {};
+    
 }
 
 function populateTextArea() {
@@ -34,4 +36,4 @@ function populateTextArea() {
     }
     }
 }
-console.log(localStorage.getItem(FEEDBACKFORM_KEY));
+const parsedItem = JSON.parse(localStorage.getItem(FEEDBACKFORM_KEY));
